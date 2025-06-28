@@ -1,0 +1,14 @@
+-- Anti-Kick AFK Script (20m bypass)
+-- Code By Nespola001
+Players.LocalPlayer.Idled:Connect(function()
+    local Humanoid = Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
+    if Humanoid then
+        Humanoid:Move(Vector3.new(1, 0, 0), true) -- small movement
+        wait(0.5)
+        Humanoid:Move(Vector3.new(-1, 0, 0), true) -- back to original position
+    end
+
+    vu:Button2Down(Vector2.new(0, 0), workspace.CurrentCamera.CFrame)
+    wait(1)
+    vu:Button2Up(Vector2.new(0, 0), workspace.CurrentCamera.CFrame)
+end)
