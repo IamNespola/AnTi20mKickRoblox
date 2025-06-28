@@ -13,3 +13,4 @@ Players.LocalPlayer.Idled:Connect(function()
 end)
 
 print("Anti-AFK script loaded.")
+-- Code By Nespola001
