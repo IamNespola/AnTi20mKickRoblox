@@ -1,0 +1,15 @@
+--[[ Anti-Kick AFK Script (20m bypass) ]]
+-- Simulates user input every 5-10 minutes randomly
+local vu = game:GetService("VirtualUser")
+local Players = game:GetService("Players")
+
+Players.LocalPlayer.Idled:Connect(function()
+    local waitTime = math.random(300, 600) -- 5 to 10 minutes
+    print("AFK detected. Waiting for", waitTime, "seconds before simulating input...")
+    wait(waitTime)
+    vu:Button2Down(Vector2.new(0, 0), workspace.CurrentCamera.CFrame)
+    wait(1)
+    vu:Button2Up(Vector2.new(0, 0), workspace.CurrentCamera.CFrame)
+end)
+
+print("Anti-AFK script loaded.")
